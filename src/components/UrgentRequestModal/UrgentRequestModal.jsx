@@ -70,7 +70,7 @@ const UrgentRequestModal = ({ isOpen, onClose, onSubmit }) => {
                                     className={cn('priority-btn', { active: form.priority === 'low' })}
                                     onClick={() => setForm((p) => ({ ...p, priority: 'low' }))}
                                 >
-                                    низкий
+                                    Низкий
                                 </button>
                             </div>
                         </div>
