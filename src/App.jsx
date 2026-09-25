@@ -4,11 +4,11 @@ import AuthPage from "./pages/AuthPage/AuthPage"
 import DispatcherPage from "./pages/DispatcherPage/DispatcherPage"
 import EngineerPage from "./pages/EngineerPage/EngineerPage"
 
+
 const App = () => {
     return (
         <BrowserRouter>
             <Routes>
-                
                 <Route path="/" element={<HomePage />}/>
                 <Route path="/auth" element={<AuthPage />}/>
                 <Route path="/dispatcher" element={<DispatcherPage />} />

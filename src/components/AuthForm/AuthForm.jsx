@@ -1,6 +1,7 @@
 import { useState } from "react"
 import './AuthForm.css'
 import * as yup from 'yup'
+import { setSession } from '../../api/session'
 
 const authSchema = yup.object().shape({
     login: yup
@@ -16,7 +17,7 @@ const authSchema = yup.object().shape({
     .matches(/^[A-Za-z0-9!@#$%^&*_+-=,.<>?]*$/, 'Пароль должен содержать только латинские буквы, цифры или символы !@#$%^&*_+-=,.<>?'),
 })
 
-const AuthForm = ({ title, buttonText, onSubmit }) => {
+const AuthForm = ({ buttonText, onSubmit }) => {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const [validationError, setValidationError] = useState('')
@@ -29,6 +30,12 @@ const AuthForm = ({ title, buttonText, onSubmit }) => {
         try {
             await authSchema.validate({ login, password })
             setValidationError('')
+
+            // Демо: пока бэкенд не отдаёт пользователя — роль из email.
+            // Когда появится API — удалить эти две строки (сессия ставится в AuthPage из ответа сервера).
+            const role = login.includes('dispatcher') ? 'dispatcher' : 'engineer'
+            setSession({ name: login.split('@')[0], role })
+
             onSubmit({ login, password })
         } catch (error) {
             setValidationError(error.message)
@@ -36,37 +43,31 @@ const AuthForm = ({ title, buttonText, onSubmit }) => {
     }
 
     return (
-        <>
-            <h1 className="main__title">{title}</h1>
-            <div className="form__container">
-                <form className="form" onSubmit={handleSubmit} noValidate>
-                <fieldset className="form__fieldset">
-                    <input
+        <form className="auth-form" onSubmit={handleSubmit} noValidate>
+            <fieldset className="auth-form__fields">
+                <input
                     type="email"
-                    placeholder="Email"
-                    className="form__input"
+                    placeholder="Логин"
+                    className="auth-form__input"
                     value={login}
                     onChange={(e) => setLogin(e.target.value)}
-                    />
-                    <input
+                />
+                <input
                     type="password"
                     placeholder="Пароль"
-                    className="form__input"
+                    className="auth-form__input"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    />
-                </fieldset>
-                {validationError && <p className="error-text">{validationError}</p>}
-                <button 
-                    className={`form__button button ${isValid ? 'form__button--active' : ''}`}
-                    type="submit"
-                >
-                    {buttonText}
-                </button>
-                </form>
-            </div>
-
-        </>
+                />
+            </fieldset>
+            {validationError && <p className="auth-form__error">{validationError}</p>}
+            <button
+                className={`auth-form__button ${isValid ? 'auth-form__button--active' : ''}`}
+                type="submit"
+            >
+                {buttonText}
+            </button>
+        </form>
     )
 }
 

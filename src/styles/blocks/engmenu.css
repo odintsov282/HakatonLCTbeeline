@@ -1,14 +1,5 @@
-.engineer-modal {
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.main-container {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
+.engmenu-main-container {
+    flex: 1;
     background-color: #64748b;
     display: flex;
     justify-content: center;
@@ -16,7 +7,7 @@
     padding: 20px;
 }
 
-.modal-card {
+.engmenu-modal-card {
     background-color: #ffffff;
     width: 720px;
     height: 660px;
@@ -27,14 +18,14 @@
     overflow: hidden;
 }
 
-.card-header {
+.engmenu-card-header {
     padding: 20px 25px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
 }
-.card-header::after {
+.engmenu-card-header::after {
     content: '';
     position: absolute;
     left: 25px;
@@ -44,13 +35,13 @@
     background-color: #e5e7eb;
 }
 
-.user-info {
+.engmenu-user-info {
     display: flex;
     gap: 15px;
     align-items: center;
 }
 
-.avatar {
+.engmenu-avatar {
     width: 48px;
     height: 48px;
     background-color: #F1F5F9;
@@ -62,7 +53,7 @@
     font-size: 20px;
     position: relative;
 }
-.avatar::after {
+.engmenu-avatar::after {
     content: '';
     position: absolute;
     bottom: 2px;   
@@ -74,18 +65,18 @@
     border: 2px solid #ffffff;
 }
 
-.user-details h1 {
+.engmenu-user-details h1 {
     font-size: 18px;
     color: #111827;
     margin-bottom: 4px;
 }
 
-.user-details p {
+.engmenu-user-details p {
     font-size: 12px;
     color: #6b7280;
 }
 
-.close-btn {
+.engmenu-close-btn {
     background: none;
     border: none;
     font-size: 40px;
@@ -95,11 +86,11 @@
     padding: 0 5px;
 }
 
-.close-btn:hover {
+.engmenu-close-btn:hover {
     color: #4b5563;
 }
 
-.card-body {
+.engmenu-card-body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 16px;
@@ -107,7 +98,7 @@
     flex: 1;
 }
 
-.left-col {
+.engmenu-left-col {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -119,20 +110,20 @@
     padding: 6px 16px;
 }
 
-.label {
+.engmenu-label {
     font-size: 10px;
     color: #64748B;
     font-weight: normal;
     display: block;
     margin-bottom: 7px;
 }
-.label-requests{
+.engmenu-label-requests{
     text-transform: uppercase;
     font-size: 10px;
     color: #64748B;
     font-weight: bold;
 }
-.label-uppercase {
+.engmenu-label-uppercase {
     text-transform: uppercase;
     font-size: 10px;
     color: #64748B;
@@ -140,13 +131,13 @@
     display: block;
     margin-bottom: 7px;
 }
-.status-block {
+.engmenu-status-block {
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
 
-.status-badge {
+.engmenu-status-badge {
     background-color: #DCFCE7;
     color: #15803D;
     border: 1px solid #BBF7D0;
@@ -159,7 +150,7 @@
     gap: 8px;
 }
 
-.dot {
+.engmenu-dot {
     width: 8px;
     height: 8px;
     background-color: #15803D;
@@ -167,13 +158,13 @@
     display: inline-block;
 }
 
-.location-block p {
+.engmenu-location-block p {
     font-weight: bold;
     color: #0F172A;
     font-size: 11px;
 }
 
-.requests-block {   
+.engmenu-requests-block {   
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -181,66 +172,66 @@
     margin-top: 5px;
 }
 
-.request-item {
+.engmenu-request-item {
     background-color: #FFFFFF;
     border: 1px solid #E2E8F0;
     border-radius: 8px;
     padding: 12px;
 }
 
-.request-item.active {
+.engmenu-request-item.active {
     border-color: #CBD5E1;
     background-color: #ffffff;
 }
 
-.req-header {
+.engmenu-req-header {
     font-size: 11px;
     margin-bottom: 4px;
 }
 
-.req-status {
+.engmenu-req-status {
     font-size: 9px;
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
-.req-status.green {
+.engmenu-req-status.green {
     color: #16A34A;
     font-weight: bold;
 }
 
-.req-status.gray {
+.engmenu-req-status.gray {
     color: #64748B;
 }
 
-.right-col {
+.engmenu-right-col {
     height: 100%; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 15px;
 }
-.right-col-body{
+.engmenu-right-col-body{
     display: flex;         
     flex-direction: column;
     gap: 5px;
 }
 
-.label-right-col{
+.engmenu-label-right-col{
     font-size: 11px;
     text-transform: uppercase;
     color: #0F172A;
     font-weight: bold;
 }
 
-.equipment-header {
+.engmenu-equipment-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.btn-yellow {
+.engmenu-btn-yellow {
     background-color: #FFCC00;
     color: #000000;
     border: none;
@@ -254,7 +245,7 @@
     gap: 6px;
 }
 
-.sub-label {
+.engmenu-sub-label {
     font-size: 10px;
     text-transform: uppercase;
     color: #94A3B8;
@@ -262,7 +253,7 @@
     margin-top: 10px;
 }
 
-.device-item {
+.engmenu-device-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -272,28 +263,28 @@
     background-color: #fff;
 }
 
-.device-info {
+.engmenu-device-info {
     display: flex;
     flex-direction: column;
     gap: 3px;
 }
 
-.device-info strong {
+.engmenu-device-info strong {
     font-size: 11px;
     color: #0F172A;
 }
 
-.sn {
+.engmenu-sn {
     font-size: 9px;
     color: #64748B;
 }
 
-.text-green {
+.engmenu-text-green {
     color: #16A34A;
     font-weight: bold;
 }
 
-.device-qty {
+.engmenu-device-qty {
     background-color: #16A34A;
     color: #E2E8F0;
     font-size: 9px;
@@ -302,7 +293,7 @@
     border-radius: 20px;
 }
 
-.card-footer {
+.engmenu-card-footer {
     border-top: 1px solid #F1F5F9;
     padding-top: 10px;
     display: flex;
@@ -310,7 +301,7 @@
     align-items: center;
 }
 
-.btn-outline {
+.engmenu-btn-outline {
     background: #F1F5F9;
     border: 1px solid #CBD5E1;
     color: #334155;
@@ -321,16 +312,16 @@
     cursor: pointer;
 }
 
-.btn-outline:hover {
+.engmenu-btn-outline:hover {
     background-color: #e2e5eb;
 }
 
-.footer-right {
+.engmenu-footer-right {
     display: flex;
     gap: 12px;
 }
 
-.btn-red {
+.engmenu-btn-red {
     background-color: #EF4444;
     color: #fff;
     border: none;
@@ -341,11 +332,11 @@
     cursor: pointer;
 }
 
-.btn-red:hover {
+.engmenu-btn-red:hover {
     background-color: #dc2626;
 }
 
-.btn-dark {
+.engmenu-btn-dark {
     background-color: #0F172A;
     color: #fff;
     border: none;
@@ -356,8 +347,6 @@
     cursor: pointer;
 }
 
-.btn-dark:hover {
+.engmenu-btn-dark:hover {
     background-color: #2e3952;
-}
-
 }

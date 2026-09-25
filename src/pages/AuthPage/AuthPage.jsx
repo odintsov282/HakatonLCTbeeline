@@ -1,9 +1,8 @@
-import Main from '../../components/Main/Main'
-import AuthForm from '../../components/AuthForm/AuthForm'
-import './AuthPage.css'
-import { authRequest } from '../../api/auth'
 import { useState } from 'react'
-import AuthHeader from '../../components/AuthHeader/AuthHeader'
+import AuthForm from '../../components/AuthForm/AuthForm'
+import logoDecor from '../../assets/logo-decor.svg'
+import { authRequest } from '../../api/auth'
+import './AuthPage.css'
 
 const AuthPage = () => {
     const [error, setError] = useState('')
@@ -24,17 +23,19 @@ const AuthPage = () => {
     }
 
     return (
-        <>
-            <AuthHeader />
-            <Main>
-                <AuthForm
-                    title='Войти или зарегистрироваться'
-                    buttonText={isLoading ? 'Загрузка...': 'Продолжить'}
-                    onSubmit={handleAuth}
-                />
-                {error && <p className='error-text'>{error}</p>}
-            </Main>
-        </>
+        <main className="auth-page">
+            <div className="auth-page__inner">
+                <img src={logoDecor} alt="Билайн" className="auth-page__logo" />
+                <h1 className="auth-page__title">Авторизация</h1>
+                <div className="auth-card">
+                    <AuthForm
+                        buttonText={isLoading ? 'Загрузка...' : 'Войти'}
+                        onSubmit={handleAuth}
+                    />
+                </div>
+                {error && <p className="auth-page__error">{error}</p>}
+            </div>
+        </main>
     )
 }
 
